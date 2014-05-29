@@ -6,8 +6,22 @@ html
     link(href='/css/normalize.css', rel='stylesheet')
     link(href='/css/buttons.css', rel='stylesheet')
     link(href='/less/app.css', rel='stylesheet')
+    body(style='background-image:url(/img/'+bg+');')
+
   body
-    block content
+  a(href='/about')
+    button About Chimeras
+
+  a(href='/chrimeras/new')
+    button + Chimera
+
+  a(href='/')
+    button Home
+
+  a(href='/chrimeras')
+    button All Chimeras
+
+  block content
 
     script(src='/js/vendor/jquery-2.1.1.js')
     script(src='/js/vendor/lodash-2.4.1.js')

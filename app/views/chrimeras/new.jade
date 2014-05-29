@@ -1,0 +1,29 @@
+extends ../shared/template
+
+block content
+
+  h1 Create a Chrimera
+
+  form(method='POST', action='/chrimeras')
+    input(name='name', type='text', placeholder='Name')
+    input(name='age',type='text', placeholder='Age')
+    input(name='gender',type='text', placeholder='Gender')
+
+    select(name='headPhoto')
+      option Head
+      option Horse
+      option Lizard
+      option Gorilla
+
+    select(name='bodyPhoto')
+      option Body
+      option Horse
+      option Lizard
+      option Gorilla
+
+    select(name='legsPhoto')
+      option Legs
+      option Horse
+      option Lizard
+      option Gorilla
+    button Add

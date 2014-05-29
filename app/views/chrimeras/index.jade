@@ -1,0 +1,43 @@
+extends ../shared/template
+
+block content
+
+  h1 All Chimeras
+
+  #filters
+    ul
+      li
+        a(href='/chrimeras') All
+      li
+        a(href='/chrimeras?headPhoto=horse-head.jpg') Horse Head
+      li
+        a(href='/chrimeras?headPhoto=lizard-head.jpg') Lizard Head
+      li
+        a(href='/chrimeras?headPhoto=gorilla-head.jpg') Gorilla Head
+      li
+        a(href='/chrimeras?bodyPhoto=horse-body.jpg') Horse Body
+      li
+        a(href='/chrimeras?bodyPhoto=gorilla-body.png') Gorilla Body
+      li
+        a(href='/chrimeras?bodyPhoto=lizard-body.jpg') Lizard Body
+      li
+        a(href='/chrimeras?legsPhoto=horse-legs.jpg') Horse Legs
+      li
+        a(href='/chrimeras?legsPhoto=gorilla-legs.jpg') Gorilla Legs
+      li
+        a(href='/chrimeras?legsPhoto=lizard-legs.jpg') Lizard Legs
+
+
+  #show
+    each chrimera in chrimeras
+      a(href='/chrimeras/#{chrimera._id}')
+        h3= chrimera.name
+        h3= chrimera.age
+        h3= chrimera.gender
+        img(src='/img/' + chrimera.headPhoto)
+        img(src='/img/' + chrimera.bodyPhoto)
+        img(src='/img/' + chrimera.legsPhoto)
+
+        .delete
+          form(action='/chrimeras/#{chrimera._id}/delete', method='Post')
+            button#delete X
